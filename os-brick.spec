@@ -4,7 +4,7 @@
 #
 Name     : os-brick
 Version  : 0.5.0
-Release  : 2
+Release  : 3
 URL      : http://tarballs.openstack.org/os-brick/os-brick-0.5.0.tar.gz
 Source0  : http://tarballs.openstack.org/os-brick/os-brick-0.5.0.tar.gz
 Summary  : OpenStack Cinder brick library for managing local volume attaches
@@ -16,6 +16,7 @@ BuildRequires : Sphinx-python
 BuildRequires : coverage-python
 BuildRequires : extras
 BuildRequires : extras-python
+BuildRequires : funcsigs-python
 BuildRequires : hacking
 BuildRequires : msgpack-python-python
 BuildRequires : netifaces-python
@@ -29,8 +30,10 @@ BuildRequires : pbr
 BuildRequires : pip
 BuildRequires : python-dev
 BuildRequires : python-mimeparse-python
+BuildRequires : python-mock
 BuildRequires : python3-dev
 BuildRequires : repoze.lru-python
+BuildRequires : requests-python
 BuildRequires : retrying-python
 BuildRequires : setuptools
 BuildRequires : six
@@ -80,6 +83,11 @@ python components for the os-brick package.
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
+%check
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
+py.test-2.7 --verbose py2 || :
 %install
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot}
