@@ -26,3 +26,5 @@ unittest2-python
 python-mimeparse-python
 extras-python
 extras
+python-mock
+requests-python
