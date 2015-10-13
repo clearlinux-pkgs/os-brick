@@ -4,14 +4,14 @@
 #
 Name     : os-brick
 Version  : 0.5.0
-Release  : 4
+Release  : 5
 URL      : http://tarballs.openstack.org/os-brick/os-brick-0.5.0.tar.gz
 Source0  : http://tarballs.openstack.org/os-brick/os-brick-0.5.0.tar.gz
 Summary  : OpenStack Cinder brick library for managing local volume attaches
 Group    : Development/Tools
 License  : Apache-2.0
-Requires: os-brick-config
 Requires: os-brick-python
+Requires: os-brick-data
 BuildRequires : Sphinx-python
 BuildRequires : coverage-python
 BuildRequires : extras
@@ -46,6 +46,7 @@ BuildRequires : testtools-python
 BuildRequires : traceback2-python
 BuildRequires : unittest2-python
 BuildRequires : wrapt-python
+Patch1: 0001-move-etc-os-brick-rootwrap.d-os-brick.filters-to-sta.patch
 
 %description
 ===============================
@@ -55,12 +56,12 @@ brick
 :target: https://pypi.python.org/pypi/os-brick/
 :alt: Latest Version
 
-%package config
-Summary: config components for the os-brick package.
-Group: Default
+%package data
+Summary: data components for the os-brick package.
+Group: Data
 
-%description config
-config components for the os-brick package.
+%description data
+data components for the os-brick package.
 
 
 %package python
@@ -78,6 +79,7 @@ python components for the os-brick package.
 
 %prep
 %setup -q -n os-brick-0.5.0
+%patch1 -p1
 
 %build
 python2 setup.py build -b py2
@@ -96,9 +98,9 @@ python3 -tt setup.py build -b py3 install --root=%{buildroot}
 %files
 %defattr(-,root,root,-)
 
-%files config
+%files data
 %defattr(-,root,root,-)
-%config /usr/etc/os-brick/rootwrap.d/os-brick.filters
+/usr/share/defaults/os-brick/rootwrap.d/os-brick.filters
 
 %files python
 %defattr(-,root,root,-)
