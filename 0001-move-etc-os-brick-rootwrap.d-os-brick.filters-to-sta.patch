@@ -1,0 +1,26 @@
+From 2128524370a161cac559b886aa27b6b20f0b1e3f Mon Sep 17 00:00:00 2001
+From: "Simental Magana, Marcos" <marcos.simental.magana@intel.com>
+Date: Tue, 13 Oct 2015 15:20:48 -0500
+Subject: [PATCH] move etc/os-brick/rootwrap.d/os-brick.filters to stateless
+ dir
+
+---
+ setup.cfg | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/setup.cfg b/setup.cfg
+index 4df7bd8..4da4f59 100644
+--- a/setup.cfg
++++ b/setup.cfg
+@@ -28,7 +28,7 @@ setup-hooks =
+ packages = 
+ 	os_brick
+ data_files = 
+-	etc/ = etc/*
++	/usr/share/defaults = etc/*
+ 
+ [egg_info]
+ tag_build = 
+-- 
+2.4.3
+
