@@ -1,9 +1,20 @@
 CHANGES
 =======
 
+0.7.0
+-----
+
+* DRBD connector class
+* Deprecated tox -downloadcache option removed
+* Allow RBDClient to be used from a with-statement
+* Updated from global requirements
+* Remove brackets from portal
+* Minor documentation fixes for the method parameters
+
 0.6.0
 -----
 
+* Add requests to project requirements
 * Add quobyte protocol for remotefs connections
 * Correct a log message
 * Brick add param documentation to connectors
