@@ -1,11 +1,26 @@
 CHANGES
 =======
 
+0.8.0
+-----
+
+* Add connector for ITRI DISCO cinder driver
+* os-brick add extend_volume API
+* os-brick add cinder local_dev lvm code
+* Revert "Use assertTrue/False instead of assertEqual(T/F)"
+* Fix another unit test failure
+* Use assertTrue/False instead of assertEqual(T/F)
+* Actually log the command used in _run_iscsiadm
+* Updated from global requirements
+* remove python 2.6 trove classifier
+
 0.7.0
 -----
 
 * DRBD connector class
+* Updated from global requirements
 * Deprecated tox -downloadcache option removed
+* ScaleIO could connect wrong volume to VM
 * Allow RBDClient to be used from a with-statement
 * Updated from global requirements
 * Remove brackets from portal
