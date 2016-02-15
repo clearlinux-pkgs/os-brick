@@ -4,7 +4,7 @@
 #
 Name     : os-brick
 Version  : 0.8.0
-Release  : 8
+Release  : 9
 URL      : http://tarballs.openstack.org/os-brick/os-brick-0.8.0.tar.gz
 Source0  : http://tarballs.openstack.org/os-brick/os-brick-0.8.0.tar.gz
 Summary  : OpenStack Cinder brick library for managing local volume attaches
