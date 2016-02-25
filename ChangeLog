@@ -1,6 +1,29 @@
 CHANGES
 =======
 
+1.1.0
+-----
+
+* Fix setting the multipath_id
+* Updated from global requirements
+* Include multipath -ll output in failed to parse warning
+
+1.0.0
+-----
+
+* Fix iSCSI Multipath
+* Add missing release notes
+* Lun id's > 255 should be converted to hex
+* Updated from global requirements
+* Fix output returned from get_all_available_volumes
+* Raise exception in find_multipath_device
+* Updated from global requirements
+* Remove multipath -l logic from ISCSI connector
+* Add vzstorage protocol for remotefs connections
+* Add reno for release notes management
+* Fix get_device_size with newlines
+* Updated from global requirements
+
 0.8.0
 -----
 
