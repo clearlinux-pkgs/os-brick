@@ -4,7 +4,7 @@
 #
 Name     : os-brick
 Version  : 1.2.0
-Release  : 11
+Release  : 12
 URL      : http://tarballs.openstack.org/os-brick/os-brick-1.2.0.tar.gz
 Source0  : http://tarballs.openstack.org/os-brick/os-brick-1.2.0.tar.gz
 Summary  : OpenStack Cinder brick library for managing local volume attaches
@@ -12,8 +12,10 @@ Group    : Development/Tools
 License  : Apache-2.0
 Requires: os-brick-python
 Requires: os-brick-data
+BuildRequires : Jinja2
 BuildRequires : Sphinx-python
 BuildRequires : coverage-python
+BuildRequires : docutils-python
 BuildRequires : extras
 BuildRequires : extras-python
 BuildRequires : hacking
