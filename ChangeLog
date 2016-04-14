@@ -1,17 +1,26 @@
 CHANGES
 =======
 
-1.2.0
+1.3.0
 -----
 
+* LVM: Call supports_thin_provisioning as static
+* Add pylint tox env
+* Don't use oslo-incubator stuff
+* Update reno for stable/mitaka
+* Replace _get_multipath_device_name with _discover_mpath_device
+* Fixes get_all_available_volumes return value
 * Updated from global requirements
-* Update .gitreview for stable/mitaka
+* Fix Scality SOFS support
+* Actually run the RemoteFSClient unit tests
+* Mock time.sleep() in 3 unit tests
 
 1.1.0
 -----
 
 * Fix setting the multipath_id
 * Updated from global requirements
+* Add sheepdog support
 * Include multipath -ll output in failed to parse warning
 
 1.0.0
