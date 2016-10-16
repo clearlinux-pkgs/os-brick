@@ -1,6 +1,84 @@
 CHANGES
 =======
 
+1.6.1
+-----
+
+* Create connector aliases to the new connectors refactor
+
+1.6.0
+-----
+
+* Mask out passwords when tracing
+* RBD: Fix typo in rados timeout assignment
+* Fixes with customized ceph cluster name
+* Add connector for GPFS volumes
+* Add missing %s in print message
+* Fix linuxrbd to work with Python 3
+* Add tracing unit tests
+* Wrong param makes exception message throws inaccurate
+* Fix the typo in the file
+* Add connector for vmdk volumes
+* Fix iSCSI discovery with ISER transport
+* RemoteFsClient extend Executor
+* Add Windows Fibre Channel connector
+* Add Windows SMBFS connector
+* Fix FC multipath cleanup
+* Fix weak test_vzstorage_with_mds_list
+* Fix the mocking mess
+* Fix FC multipath rescan
+* Update the home-page info with the developer documentation
+* Splitting Out Connectors from connector.py
+* Remove race condition from lvextend
+
+1.5.0
+-----
+
+* Updated from global requirements
+* Mock write and read operations to filesystem
+* Local attach feature in RBD connector
+* Remove useless info logging in check_valid_device
+* ScaleIO to get volume name from connection properties
+* Add ignore for . directories
+* Upgrade tox to 2.0
+* Add trace facility
+* Fix string interpolation to delayed to be handled by the logging code
+* Replace assertEqual(None, *) with assertIsNone in tests
+* Fix wrong path used in iscsi "multipath -l"
+* Updated from global requirements
+* Remove unused LOG to keep code clean
+* Fix multipath iSCSI encrypted volume attach failure
+* Updated from global requirements
+* release note for windows iSCSI
+* Add Windows iSCSI connector
+* Make code line length less than 79 characters
+* Updated from global requirements
+* Replace ip with portal to express more accurately
+* Fix argument order for assertEqual to (expected, observed)
+* Add fast8 to quickly test pep8 changes
+* Make RBDImageMetadata and RBDVolumeIOWrapper re-usable
+
+1.4.0
+-----
+
+* Copy encryptors from Nova to os-brick
+* Disconnect multipath iscsi may logout session
+* Add support for processutils.execute
+* Updated from global requirements
+* Mock time.sleep in ISCSIConnectorTestCase
+* Updated from global requirements
+* Updated from global requirements
+* Updated from global requirements
+* Ensure that the base connector is platform independent
+* Updated from global requirements
+* os-brick refactor get_connector_properties
+* Handle exception case with only target_portals
+* LVM: Create thin pool with 100%FREE
+* Fix coverage generation
+* Trivial rootwrap -> privsep replacement
+* Updated from global requirements
+* Updated from global requirements
+
 1.3.0
 -----
 
@@ -87,6 +165,7 @@ CHANGES
 * Fix silent iSCSI login failures
 * Change os-brick to use ostestr
 * Updated from global requirements
+* Fix iSCSI multipath cleanup
 * Removed use of deprecated LOG.warn
 * Fix typo in vgc-cluster command in rootwrap file
 

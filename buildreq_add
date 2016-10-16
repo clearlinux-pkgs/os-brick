@@ -28,3 +28,4 @@ extras-python
 extras
 python-mock
 requests-python
+castellan
