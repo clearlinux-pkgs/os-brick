@@ -6,7 +6,7 @@
 #
 Name     : os-brick
 Version  : 1.6.1
-Release  : 21
+Release  : 22
 URL      : http://tarballs.openstack.org/os-brick/os-brick-1.6.1.tar.gz
 Source0  : http://tarballs.openstack.org/os-brick/os-brick-1.6.1.tar.gz
 Source99 : http://tarballs.openstack.org/os-brick/os-brick-1.6.1.tar.gz.asc
@@ -29,41 +29,11 @@ Requires: pbr
 Requires: requests
 Requires: retrying
 Requires: six
-BuildRequires : Sphinx-python
-BuildRequires : castellan
-BuildRequires : configparser-python
-BuildRequires : coverage-python
-BuildRequires : extras
-BuildRequires : extras-python
-BuildRequires : hacking
-BuildRequires : msgpack-python-python
-BuildRequires : netifaces-python
-BuildRequires : oslo.config
-BuildRequires : oslo.serialization-python
-BuildRequires : oslo.service-python
-BuildRequires : oslo.utils-python
-BuildRequires : oslosphinx-python
-BuildRequires : oslotest-python
 BuildRequires : pbr
 BuildRequires : pip
 BuildRequires : python-dev
-BuildRequires : python-mimeparse-python
-BuildRequires : python-mock
 BuildRequires : python3-dev
-BuildRequires : repoze.lru-python
-BuildRequires : requests-python
-BuildRequires : retrying-python
 BuildRequires : setuptools
-BuildRequires : six
-BuildRequires : six-python
-BuildRequires : stevedore
-BuildRequires : testrepository-python
-BuildRequires : testscenarios
-BuildRequires : testtools
-BuildRequires : testtools-python
-BuildRequires : traceback2-python
-BuildRequires : unittest2-python
-BuildRequires : wrapt-python
 Patch1: 0001-move-etc-os-brick-rootwrap.d-os-brick.filters-to-sta.patch
 
 %description
@@ -96,17 +66,12 @@ python components for the os-brick package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1489030053
+export SOURCE_DATE_EPOCH=1489274062
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
-%check
-export http_proxy=http://127.0.0.1:9/
-export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost,127.0.0.1,0.0.0.0
-py.test-2.7 --verbose py2 || :
 %install
-export SOURCE_DATE_EPOCH=1489030053
+export SOURCE_DATE_EPOCH=1489274062
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
