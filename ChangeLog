@@ -1,17 +1,91 @@
 CHANGES
 =======
 
-1.6.1
+1.11.0
+------
+
+* Updated from global requirements
+* Encryptors: Fix compat with Nova encryptors for Ocata
+
+1.10.0
+------
+
+* Fix a wrong indentation
+* s390 FC device path fix for Ubuntu
+
+1.9.0
 -----
 
+* Updated from global requirements
+* encryptors: Introduce encryption provider constants
+* Add debug to tox environment
+* Windows connectors: add device_scan_interval arg
+* Add curl to bindep
+* Removes unnecessary utf-8 encoding
+* Replace assertDictMatch with assertDictEqual
+* Add Constraints support and missing bindep.txt dependencies
+* Move castellan to test-reqs
+* Fix import method to follow community guideline
+* Remove the duplicate calls to rescan
+* Code cleanup in initiator/linuxfc.py
+* Updated from global requirements
+* linuxfc: log path when HBA not found
+* RBD: ensure temporary config gets deleted
+* os-brick: Add bindep support
+* Show team and repo badges on README
+* Updated from global requirements
+* Add developer docs url in README.rst(trivial)
+* encryptors: Workaround mangled passphrases
+* encryptors: Mock os_brick.executor correctly
+* RBD: enclose ipv6 addresses in square brackets
+* Updated from global requirements
+* Mask passwords in utils.trace for func params
+
+1.8.0
+-----
+
+* Updated from global requirements
+* Raise specific exception for an invalid protocol connector
+* Updated from global requirements
+* Multipath device keeps old size when extending volume
+* Updated from global requirements
+* Delete deprecated Hacking in tox.ini
+
+1.7.0
+-----
+
+* Delete  MANIFEST.in in os-brick
+* Drop py33 support
+* Windows remotefs: create mountpoints at the expected location
+* linuxrbd: remove obsolete comment on close()
+* Enable release notes translation
+* Detect if Fibre Channel support exists
+* Close connection to ceph after cinder bakcup
+* Updated from global requirements
+* Updated from global requirements
+* Replace 'assertTrue(a not in b)' with 'assertNotIn(a, b)'
+* s390x iscsi support enablement
+* Docstrings should not start with a space
+* Use assertEqual() instead of assertDictEqual()
+* Stop calling multipath -r when attaching/detaching iSCSI volumes
+* DISCO: Log init message as debug
+* Change warning to info logging for connected volume rescans
+* standardize release note page ordering
+* Mock time.sleep for test_lv_deactivate_timeout test
+* Update reno for stable/newton
+* Change assertTrue(isinstance()) with optimal assert
+* Remove self.__dict__ for formatting strings
 * Create connector aliases to the new connectors refactor
+* TrivialFix: Remove logging import unused
 
 1.6.0
 -----
 
+* Fix cmd execution stderr, stdout unicode errors
 * Mask out passwords when tracing
 * RBD: Fix typo in rados timeout assignment
 * Fixes with customized ceph cluster name
+* Add retries to iSCSI connect_volume
 * Add connector for GPFS volumes
 * Add missing %s in print message
 * Fix linuxrbd to work with Python 3
@@ -73,6 +147,7 @@ CHANGES
 * Updated from global requirements
 * os-brick refactor get_connector_properties
 * Handle exception case with only target_portals
+* Retire ISERConnector from documentation
 * LVM: Create thin pool with 100%FREE
 * Fix coverage generation
 * Trivial rootwrap -> privsep replacement
