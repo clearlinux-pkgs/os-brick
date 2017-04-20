@@ -1,11 +1,31 @@
 CHANGES
 =======
 
+1.12.0
+------
+
+* Fixed generated temp file problem for RBD backend
+* Updated from global requirements
+* Mask logging of connection info for iSCSI connector
+* os-brick connector for Veritas HyperScale
+* Move vzstorage related code out of RemoteFsClient
+* Updated from global requirements
+* RBD: consider a custom keyring in connection info
+* Add Ocata release notes page
+* Using assertIsNone(x) instead of assertEqual(None, x)
+* Remove log translations
+* Updated from global requirements
+* Fix iSCSI multipath rescan
+* Retry multipath flush when map is in use
+* Fix multipath flush when using friendly names
+* Fix unittest run on s390x host
+
 1.11.0
 ------
 
 * Updated from global requirements
 * Encryptors: Fix compat with Nova encryptors for Ocata
+* Add Python 3.5 classifier and venv
 
 1.10.0
 ------
