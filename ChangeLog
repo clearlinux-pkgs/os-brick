@@ -1,12 +1,193 @@
 CHANGES
 =======
 
+2.5.3
+-----
+
+* FC Allow for multipath volumes with different LUNs
+* Windows SMBFS: avoid mounting local shares by default
+* Remove testrepository
+* RemoteFS: don't fail in do\_mount if already mounted
+* Add release note link in README
+
+2.5.2
+-----
+
+* Handle multiple errors in multipath -l parsing
+
+2.5.1
+-----
+
+* fix tox python3 overrides
+* Switch to using stestr
+* FC fix for scanning only connected HBA's
+
+2.5.0
+-----
+
+* Trivial: Update pypi url to new url
+* adding sheepdog connector for PPC64
+* Fix FC: Only scan connected HBAs
+* add lower-constraints job
+* Include "nqn." in subsystem name
+* add a getter for connector mapping
+* uncap eventlet
+* Fix bindep for multipath
+* Updated from global requirements
+
+2.4.0
+-----
+
+* Accept ISCSI\_ERR\_NO\_OBJS\_FOUND from iscsiadm
+* Incorporate the connection\_properties input for PPC64
+* Adding support to extend attached ScaleIO volumes
+* Windows iSCSI: ensure disks are claimed by MPIO
+* Updated from global requirements
+* Updated from global requirements
+* Updated from global requirements
+* Windows FC: fix disk scan issues
+* Enable hacking-extensions H204, H205
+* Updated from global requirements
+* Update reno for stable/queens
+* s390x fc: Fix device path for Ubuntu with ds8k
+
+2.3.0
+-----
+
+* adding iSER connector for PPC64
+* adding VERITAS\_HYPERSCALE connector for PPC64
+* Updated from global requirements
+* adding VZSTORAGE connector for PPC64
+* Updated from global requirements
+* Update supported transports for iscsi connector
+* Remove the unnecessary pv\_list assign during LVM object init
+
+2.2.0
+-----
+
+* Remove requirement on oslo.serialization
+* Cleanup test-requirements
+* Updated from global requirements
+* Windows SMBFS: allow mounting vhd/x images
+* Windows: fix connectors 'disconnect\_volume' signature
+* Avoid tox\_install.sh for constraints support
+* Recover node.startup values after discovering
+* Add the StorPool brick connector
+
+2.1.1
+-----
+
+* set vg\_thin\_pool\_size to float type
+* Fix a typographical error in a release notes entry
+
+2.1.0
+-----
+
+* Make close on cryptsetup volumes idempotent
+* Make close on luks volumes idempotent
+* Remove setting of version/release from releasenotes
+* Adding NVMEoF for initiator CLI
+* Updated from global requirements
+* Fixing FC scanning
+* Updated from global requirements
+* Always set ignoreskipactivation on snapshot creation
+
+2.0.0
+-----
+
+* Enable Python hash randomization for tests
+* Remove legacy connector constants
+* Add .stestr.conf configuration
+* Fix \_remove\_scsi\_symlinks\_no\_links test
+* Protect against race within os.path.realpath
+* rescan fails for hba missing target wwn
+* Updated from global requirements
+* Updated from global requirements
+* Fix vmware migrate available volume bug
+* FC PPC64 device discovery issue
+* Add attribute 'name' to class RBDVolume
+* Updated from global requirements
+* Updated from global requirements
+* Fix iSCSI volume attachment over RDMA transport
+* doc: Restructure docs for doc-migration
+* doc: Remove cruft from conf.py
+* doc: Switch from oslosphinx to openstackdocstheme
+* Update reno for stable/pike
+* Fix ISCSIConnector.\_get\_potential\_volume\_paths logic
+* FC connector logs number of attempts incorrectly
+* Enable some off-by-default checks
+* Update and replace http with https for doc links
+* Get the right portal from output of iscsiadm command
+* Update and optimize documentation links
+* Updated from global requirements
+* Add client connect exception unit test for rbd
+
+1.15.1
+------
+
+* Don't obscure logs on iSCSI sendtargets failure
+* Return WWN in multipath\_id
+* Return symlinks for encrypted volumes
+
+1.15.0
+------
+
+* Revert "Don't use ignoreskipactivation for thin LVM"
+* Don't use ignoreskipactivation for thin LVM
+* Fix iSCSI cleanup fix on discovery backends
+* Fix manual scan for discovery type backends
+* Fix ceph incremental backup fail
+* Updated from global requirements
+
+1.14.0
+------
+
+* iSCSI multipath: improve logging on connect
+* Fix iSCSI cleanup issue when using discovery
+* Updated from global requirements
+* Add open-iscsi manual scan support
+* Refactor iSCSI connect
+* Fix slow test\_connect\_volume\_device\_not\_valid test
+* Add libssl to bindep
+* Refactor iSCSI disconnect
+* Updated from global requirements
+* Force LUN\_ID to an int
+
+1.13.1
+------
+
+* Fix supported connectors for Power platform
+* Removed invalid comments in tox.ini [flake8]
+* Stop ignoring H904 hacking rule in tox
+* Stop ignoring H405 hacking rule in tox
+* Stop ignoring E265 pycodestyle rule in tox
+* Stop ignoring E123 and E125 pycodestyle rules
+* Update hacking version to align with Cinder
+* Fixed the veritas connector path
+* Change code to be more Pythonic
+
+1.13.0
+------
+
+* Return correct device path from Veritas connector
+* Prevent rbd map again if it's already mapped
+* Check host device alive before multipath id discovery
+* Updated from global requirements
+* Changed way of providing RBD keyring from keyring\_path to client token
+* encryptors: Delay removal of legacy provider names
+* Change log level on \_get\_hba\_channel\_scsi\_target
+* Veritas os-brick connector should use privsep
+* Adding support for FibreChannelConnector for PPC64
+* Updated from global requirements
+
 1.12.0
 ------
 
 * Fixed generated temp file problem for RBD backend
+* Replace random uuid with fake uuid in unit tests
 * Updated from global requirements
 * Mask logging of connection info for iSCSI connector
+* Include identity information in rbd commands
 * os-brick connector for Veritas HyperScale
 * Move vzstorage related code out of RemoteFsClient
 * Updated from global requirements
@@ -39,7 +220,7 @@ CHANGES
 * Updated from global requirements
 * encryptors: Introduce encryption provider constants
 * Add debug to tox environment
-* Windows connectors: add device_scan_interval arg
+* Windows connectors: add device\_scan\_interval arg
 * Add curl to bindep
 * Removes unnecessary utf-8 encoding
 * Replace assertDictMatch with assertDictEqual
@@ -56,7 +237,7 @@ CHANGES
 * Updated from global requirements
 * Add developer docs url in README.rst(trivial)
 * encryptors: Workaround mangled passphrases
-* encryptors: Mock os_brick.executor correctly
+* encryptors: Mock os\_brick.executor correctly
 * RBD: enclose ipv6 addresses in square brackets
 * Updated from global requirements
 * Mask passwords in utils.trace for func params
@@ -91,10 +272,10 @@ CHANGES
 * DISCO: Log init message as debug
 * Change warning to info logging for connected volume rescans
 * standardize release note page ordering
-* Mock time.sleep for test_lv_deactivate_timeout test
+* Mock time.sleep for test\_lv\_deactivate\_timeout test
 * Update reno for stable/newton
 * Change assertTrue(isinstance()) with optimal assert
-* Remove self.__dict__ for formatting strings
+* Remove self.\_\_dict\_\_ for formatting strings
 * Create connector aliases to the new connectors refactor
 * TrivialFix: Remove logging import unused
 
@@ -105,7 +286,7 @@ CHANGES
 * Mask out passwords when tracing
 * RBD: Fix typo in rados timeout assignment
 * Fixes with customized ceph cluster name
-* Add retries to iSCSI connect_volume
+* Add retries to iSCSI connect\_volume
 * Add connector for GPFS volumes
 * Add missing %s in print message
 * Fix linuxrbd to work with Python 3
@@ -118,7 +299,7 @@ CHANGES
 * Add Windows Fibre Channel connector
 * Add Windows SMBFS connector
 * Fix FC multipath cleanup
-* Fix weak test_vzstorage_with_mds_list
+* Fix weak test\_vzstorage\_with\_mds\_list
 * Fix the mocking mess
 * Fix FC multipath rescan
 * Update the home-page info with the developer documentation
@@ -131,13 +312,13 @@ CHANGES
 * Updated from global requirements
 * Mock write and read operations to filesystem
 * Local attach feature in RBD connector
-* Remove useless info logging in check_valid_device
+* Remove useless info logging in check\_valid\_device
 * ScaleIO to get volume name from connection properties
 * Add ignore for . directories
 * Upgrade tox to 2.0
 * Add trace facility
 * Fix string interpolation to delayed to be handled by the logging code
-* Replace assertEqual(None, *) with assertIsNone in tests
+* Replace assertEqual(None, \*) with assertIsNone in tests
 * Fix wrong path used in iscsi "multipath -l"
 * Updated from global requirements
 * Remove unused LOG to keep code clean
@@ -165,8 +346,8 @@ CHANGES
 * Updated from global requirements
 * Ensure that the base connector is platform independent
 * Updated from global requirements
-* os-brick refactor get_connector_properties
-* Handle exception case with only target_portals
+* os-brick refactor get\_connector\_properties
+* Handle exception case with only target\_portals
 * Retire ISERConnector from documentation
 * LVM: Create thin pool with 100%FREE
 * Fix coverage generation
@@ -177,12 +358,12 @@ CHANGES
 1.3.0
 -----
 
-* LVM: Call supports_thin_provisioning as static
+* LVM: Call supports\_thin\_provisioning as static
 * Add pylint tox env
 * Don't use oslo-incubator stuff
 * Update reno for stable/mitaka
-* Replace _get_multipath_device_name with _discover_mpath_device
-* Fixes get_all_available_volumes return value
+* Replace \_get\_multipath\_device\_name with \_discover\_mpath\_device
+* Fixes get\_all\_available\_volumes return value
 * Updated from global requirements
 * Fix Scality SOFS support
 * Actually run the RemoteFSClient unit tests
@@ -191,7 +372,7 @@ CHANGES
 1.1.0
 -----
 
-* Fix setting the multipath_id
+* Fix setting the multipath\_id
 * Updated from global requirements
 * Add sheepdog support
 * Include multipath -ll output in failed to parse warning
@@ -203,25 +384,25 @@ CHANGES
 * Add missing release notes
 * Lun id's > 255 should be converted to hex
 * Updated from global requirements
-* Fix output returned from get_all_available_volumes
-* Raise exception in find_multipath_device
+* Fix output returned from get\_all\_available\_volumes
+* Raise exception in find\_multipath\_device
 * Updated from global requirements
 * Remove multipath -l logic from ISCSI connector
 * Add vzstorage protocol for remotefs connections
 * Add reno for release notes management
-* Fix get_device_size with newlines
+* Fix get\_device\_size with newlines
 * Updated from global requirements
 
 0.8.0
 -----
 
 * Add connector for ITRI DISCO cinder driver
-* os-brick add extend_volume API
-* os-brick add cinder local_dev lvm code
+* os-brick add extend\_volume API
+* os-brick add cinder local\_dev lvm code
 * Revert "Use assertTrue/False instead of assertEqual(T/F)"
 * Fix another unit test failure
 * Use assertTrue/False instead of assertEqual(T/F)
-* Actually log the command used in _run_iscsiadm
+* Actually log the command used in \_run\_iscsiadm
 * Updated from global requirements
 * remove python 2.6 trove classifier
 
@@ -250,12 +431,12 @@ CHANGES
 * Parse FCoE sysfs device paths
 * Add new Connector APIs for path validation
 * Updated from global requirements
-* Fix test_connect_volume when skip is bypassed
+* Fix test\_connect\_volume when skip is bypassed
 * Fetch and return SCSI WWN
 * Update minimum tox version to 1.8
 * Updated from global requirements
 * Wait for FC multipath devices to become writable
-* Check RBDConnector.disconnect_volume device_info argument
+* Check RBDConnector.disconnect\_volume device\_info argument
 * Updated from global requirements
 * Fix silent iSCSI login failures
 * Change os-brick to use ostestr
@@ -267,14 +448,14 @@ CHANGES
 0.5.0
 -----
 
-* Change ignore-errors to ignore_errors
+* Change ignore-errors to ignore\_errors
 * Updated from global requirements
 * Add fancy pypi version and download images
 * iSCSI fix misleading Log warning on connect fail
 * Fix missing value types for log message
 * Log a message when can’t find multipath device
 * Removed unused dependency: discover
-* Use 'device' instead of 'volume_path'
+* Use 'device' instead of 'volume\_path'
 
 0.4.0
 -----
@@ -301,7 +482,7 @@ CHANGES
 -----
 
 * remotefs: add virtuozzo storage support
-* Perform port_rescan on s390x platforms
+* Perform port\_rescan on s390x platforms
 * FC discover existing devices for removal
 
 0.3.1
@@ -357,18 +538,18 @@ CHANGES
 * Brick: Fix race in removing iSCSI device
 * Update os-brick requirements
 * Mask passwords with iscsiadm commands
-* Sync latest _i18n module for os_brick
-* Use oslo_log instead of openstack.common.log
+* Sync latest \_i18n module for os\_brick
+* Use oslo\_log instead of openstack.common.log
 * Sync loopingcall from oslo-incubator for os-brick
-* Fix wrong command for _rescan_multipath
+* Fix wrong command for \_rescan\_multipath
 * Fix multipath device discovery when UFN is enabled
-* Use six.text_type instead of unicode
+* Use six.text\_type instead of unicode
 * Fix missing translations for log messages
 * Remove error messages from multipath command output before parsing
 * Remove mocks after each unit test finished
 * Correct project name in .gitreview
 * Adjust os-brick to support FCP on System z systems
-* Use target_portals/iqns/luns for alternative target information
+* Use target\_portals/iqns/luns for alternative target information
 * Fix comments style according to Hacking rules
 * Update the documentation for os-brick
 * Failover to alternative iSCSI portals on login failure
