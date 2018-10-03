@@ -1,6 +1,26 @@
 CHANGES
 =======
 
+2.6.0
+-----
+
+* 'iscsiadm -m session' failure handling
+* Improve docstrings
+* Optimize FC device checking
+* Ignore volume disconnect if it is not connected
+* Fix spelling mistakes
+* Cleanup Zuul config file
+* add lib-forward-testing-python3 test job
+* add python 3.6 unit test job
+* switch documentation job to new PTI
+* import zuul job settings from project-config
+* Improve detection of multipathd running
+* Improve iSCSI device detection speed
+* Replace assertRaisesRegexp with assertRaisesRegex
+* Fix multipath disconnect with path failure
+* Tests: Add unit tests for nfs mount race
+* Update reno for stable/rocky
+
 2.5.3
 -----
 
