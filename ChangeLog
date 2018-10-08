@@ -1,10 +1,18 @@
 CHANGES
 =======
 
+2.6.1
+-----
+
+* Add LIO barbican tests to .zuul.yaml
+* Succeed on iSCSI detach when path just went down
+* Remove meanless debug log
+
 2.6.0
 -----
 
 * 'iscsiadm -m session' failure handling
+* The validation of iscsi session should be case insensitive
 * Improve docstrings
 * Optimize FC device checking
 * Ignore volume disconnect if it is not connected
@@ -17,6 +25,8 @@ CHANGES
 * Improve detection of multipathd running
 * Improve iSCSI device detection speed
 * Replace assertRaisesRegexp with assertRaisesRegex
+* Add staticmethod decorator in InitiatorConnector
+* Modify the verification in RBDConnector
 * Fix multipath disconnect with path failure
 * Tests: Add unit tests for nfs mount race
 * Update reno for stable/rocky
