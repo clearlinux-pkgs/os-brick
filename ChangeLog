@@ -1,6 +1,16 @@
 CHANGES
 =======
 
+2.6.2
+-----
+
+* removing older python version 3.4 from setup.cfg
+* Context manager to handle shared\_targets
+* Fix a spelling mistake
+* Fix a spelling mistake
+* Retry executing command "nvme list" when fail
+* Improve VolumePathsNotFound message details
+
 2.6.1
 -----
 
