@@ -6,7 +6,7 @@
 #
 Name     : os-brick
 Version  : 2.7.0
-Release  : 32
+Release  : 33
 URL      : http://tarballs.openstack.org/os-brick/os-brick-2.7.0.tar.gz
 Source0  : http://tarballs.openstack.org/os-brick/os-brick-2.7.0.tar.gz
 Source99 : http://tarballs.openstack.org/os-brick/os-brick-2.7.0.tar.gz.asc
@@ -84,7 +84,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1548523534
+export SOURCE_DATE_EPOCH=1548541466
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
