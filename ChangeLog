@@ -1,6 +1,16 @@
 CHANGES
 =======
 
+2.7.0
+-----
+
+* Support RSD scenario of nvme connector
+* Fix create ceph conf failed when cephx disable
+* Tests: Fix PrivRootwrapTestCase failure
+* Change openstack-dev to openstack-discuss
+* Fix NFS "already mounted" detection
+* Windows SMBFS: fix using share subdirs
+
 2.6.2
 -----
 

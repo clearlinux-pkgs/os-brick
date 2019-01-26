@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x1A541148054E9E38 (infra-root@openstack.org)
 #
 Name     : os-brick
-Version  : 2.6.2
-Release  : 31
-URL      : http://tarballs.openstack.org/os-brick/os-brick-2.6.2.tar.gz
-Source0  : http://tarballs.openstack.org/os-brick/os-brick-2.6.2.tar.gz
-Source99 : http://tarballs.openstack.org/os-brick/os-brick-2.6.2.tar.gz.asc
+Version  : 2.7.0
+Release  : 32
+URL      : http://tarballs.openstack.org/os-brick/os-brick-2.7.0.tar.gz
+Source0  : http://tarballs.openstack.org/os-brick/os-brick-2.7.0.tar.gz
+Source99 : http://tarballs.openstack.org/os-brick/os-brick-2.7.0.tar.gz.asc
 Summary  : OpenStack Cinder brick library for managing local volume attaches
 Group    : Development/Tools
 License  : Apache-2.0
@@ -35,8 +35,11 @@ BuildRequires : pbr
 Patch1: 0001-move-etc-os-brick-rootwrap.d-os-brick.filters-to-sta.patch
 
 %description
+========================
 Team and repository tags
-        ========================
+========================
+.. image:: https://governance.openstack.org/tc/badges/os-brick.svg
+:target: https://governance.openstack.org/tc/reference/tags/index.html
 
 %package data
 Summary: data components for the os-brick package.
@@ -73,7 +76,7 @@ python3 components for the os-brick package.
 
 
 %prep
-%setup -q -n os-brick-2.6.2
+%setup -q -n os-brick-2.7.0
 %patch1 -p1
 
 %build
@@ -81,7 +84,8 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1543818119
+export SOURCE_DATE_EPOCH=1548523534
+export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
 %install
