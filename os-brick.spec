@@ -6,7 +6,7 @@
 #
 Name     : os-brick
 Version  : 2.9.1
-Release  : 38
+Release  : 39
 URL      : http://tarballs.openstack.org/os-brick/os-brick-2.9.1.tar.gz
 Source0  : http://tarballs.openstack.org/os-brick/os-brick-2.9.1.tar.gz
 Source99 : http://tarballs.openstack.org/os-brick/os-brick-2.9.1.tar.gz.asc
