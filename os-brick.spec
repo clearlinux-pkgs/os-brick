@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xC12B8E73B30F2FC8 (infra-root@openstack.org)
 #
 Name     : os-brick
-Version  : 3.1.0
-Release  : 48
-URL      : http://tarballs.openstack.org/os-brick/os-brick-3.1.0.tar.gz
-Source0  : http://tarballs.openstack.org/os-brick/os-brick-3.1.0.tar.gz
-Source1  : http://tarballs.openstack.org/os-brick/os-brick-3.1.0.tar.gz.asc
+Version  : 3.2.0
+Release  : 49
+URL      : http://tarballs.openstack.org/os-brick/os-brick-3.2.0.tar.gz
+Source0  : http://tarballs.openstack.org/os-brick/os-brick-3.2.0.tar.gz
+Source1  : http://tarballs.openstack.org/os-brick/os-brick-3.2.0.tar.gz.asc
 Summary  : OpenStack Cinder brick library for managing local volume attaches
 Group    : Development/Tools
 License  : Apache-2.0
@@ -20,9 +20,11 @@ Requires: os-brick-python3 = %{version}-%{release}
 Requires: eventlet
 Requires: os-win
 Requires: oslo.concurrency
+Requires: oslo.context
 Requires: oslo.i18n
 Requires: oslo.log
 Requires: oslo.privsep
+Requires: oslo.serialization
 Requires: oslo.service
 Requires: oslo.utils
 Requires: pbr
@@ -33,9 +35,11 @@ BuildRequires : buildreq-distutils3
 BuildRequires : eventlet
 BuildRequires : os-win
 BuildRequires : oslo.concurrency
+BuildRequires : oslo.context
 BuildRequires : oslo.i18n
 BuildRequires : oslo.log
 BuildRequires : oslo.privsep
+BuildRequires : oslo.serialization
 BuildRequires : oslo.service
 BuildRequires : oslo.utils
 BuildRequires : pbr
@@ -81,9 +85,11 @@ Provides: pypi(os_brick)
 Requires: pypi(eventlet)
 Requires: pypi(os_win)
 Requires: pypi(oslo.concurrency)
+Requires: pypi(oslo.context)
 Requires: pypi(oslo.i18n)
 Requires: pypi(oslo.log)
 Requires: pypi(oslo.privsep)
+Requires: pypi(oslo.serialization)
 Requires: pypi(oslo.service)
 Requires: pypi(oslo.utils)
 Requires: pypi(pbr)
@@ -96,8 +102,8 @@ python3 components for the os-brick package.
 
 
 %prep
-%setup -q -n os-brick-3.1.0
-cd %{_builddir}/os-brick-3.1.0
+%setup -q -n os-brick-3.2.0
+cd %{_builddir}/os-brick-3.2.0
 %patch1 -p1
 
 %build
@@ -105,7 +111,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1591378853
+export SOURCE_DATE_EPOCH=1596059841
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -121,7 +127,7 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/os-brick
-cp %{_builddir}/os-brick-3.1.0/LICENSE %{buildroot}/usr/share/package-licenses/os-brick/294b43b2cec9919063be1a3b49e8722648424779
+cp %{_builddir}/os-brick-3.2.0/LICENSE %{buildroot}/usr/share/package-licenses/os-brick/294b43b2cec9919063be1a3b49e8722648424779
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
