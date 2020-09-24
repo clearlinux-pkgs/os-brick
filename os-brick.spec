@@ -6,7 +6,7 @@
 #
 Name     : os-brick
 Version  : 4.0.1
-Release  : 52
+Release  : 53
 URL      : http://tarballs.openstack.org/os-brick/os-brick-4.0.1.tar.gz
 Source0  : http://tarballs.openstack.org/os-brick/os-brick-4.0.1.tar.gz
 Source1  : http://tarballs.openstack.org/os-brick/os-brick-4.0.1.tar.gz.asc
